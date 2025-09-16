@@ -5,7 +5,7 @@
 Ts1=16;
 Ts2=5;
 %x range
-t=[-15:100];
+t=[-10:100];
 %function (y(x))
 Msv = MassGen(t,Ts1,Ts2);
 

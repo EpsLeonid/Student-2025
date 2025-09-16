@@ -15,17 +15,25 @@ l=8;
 M=16;
 
 for n=1:N
-   if (t(n)>0)&&(n<l+k)
+   if (n<=k)
+       d(n) = Msv(n);
+   elseif (n>k)&&(n<=l)
+       d(n) = Msv(n)-Msv(n-k);
+   elseif (n>l)&&(n<=l+k)
        d(n) = Msv(n)-Msv(n-k)-Msv(n-l);
-       p(n) = p(n-1)+d(n);
-       r(n) = p(n)+M*d(n);
-       Trap(n) = Trap(n-1)+r(n);
-   end
-   if (t(n)>0)&&(n>l+k)
+   else
        d(n) = Msv(n)-Msv(n-k)-Msv(n-l)+Msv(n-k-l);
+   end
+   
+   
+   if (n>1)
        p(n) = p(n-1)+d(n);
        r(n) = p(n)+M*d(n);
        Trap(n) = Trap(n-1)+r(n);
+   else
+       p(n) = d(n);
+       r(n) = p(n)+M*d(n);
+       Trap(n) = r(n);
    end
 end
 end
