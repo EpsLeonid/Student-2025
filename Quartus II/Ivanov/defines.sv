@@ -1,0 +1,2 @@
+`define DATA_WIDTH 8
+`define DATA_WIDTH_OUT 16
