@@ -23,15 +23,19 @@ endmodule*/
 
 module Task2_1(
 	input clk,
-	input [`DATA_WIDTH-1:0] a,
-	input [`DATA_WIDTH-1:0] b,
-	input [`DATA_WIDTH-1:0] c,
-	output reg [`DATA_WIDTH_OUT-1:0] data_out
+	input reg [`DATA_WIDTH-1:0] a,
+	input reg [`DATA_WIDTH-1:0] b,
+	input reg [`DATA_WIDTH-1:0] c,
+	output reg [`DATA_WIDTH_OUT:0] data_out
 );
-reg  [`DATA_WIDTH-1:0] q;
-	
+reg  [`DATA_WIDTH-1:0] q1;
+reg  [`DATA_WIDTH-1:0] q2;
+reg  [`DATA_WIDTH_OUT-1:0] temp;
+
 always_ff @(posedge clk) begin
-	q <= c;
-	data_out <= a*b+q;
+	temp <= a*b;
+	q1 <= c;
+	q2 <= q1;
+	data_out <= temp+q2;
 end
 endmodule
