@@ -21,11 +21,12 @@ package package_settings;
 //-----------------------------------------------------------------------------
 // Parameter Declaration(s)
 //-----------------------------------------------------------------------------
-	parameter SIZE_ADC_DATA                                  = 14;
-	parameter SIZE_FILTER_DATA                               = 16;
-	parameter SIZE_DELAY                                     = 7;
-	parameter DELAY_DATA                                     = 14;
-	parameter SIZE_TEST_COUNTER                              = 16;
-	parameter SIZE_TEST_RAM_ADDR                             = 7;
+	parameter SIZE_ADC_DATA									= 14;
+	parameter SIZE_FILTER_DATA								= 16;
+	parameter SIZE_DELAY									= 7;
+	parameter DELAY_DATA									= 14;
+	parameter SIZE_TEST_COUNTER								= 16;
+	parameter SIZE_TEST_RAM_ADDR							= 7;
+	parameter DEPTH											= 13;
 //-----------------------------------------------------------------------------
 endpackage

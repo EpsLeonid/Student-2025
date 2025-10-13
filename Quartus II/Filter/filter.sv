@@ -40,8 +40,8 @@ module filter (
 //-----------------------------------------------------------------------------
 	output wire [SIZE_ADC_DATA-1:0]							output_data_exp_sig_gen,
 //-----------------------------------------------------------------------------
-/*	output wire [SIZE_FILTER_DATA-1:0]						output_data_v1,
-	output wire [SIZE_FILTER_DATA-1:0]						output_data_v2,
+	output wire [SIZE_FILTER_DATA-1:0]						output_data_v1
+/*	output wire [SIZE_FILTER_DATA-1:0]						output_data_v2,
 	output wire [SIZE_FILTER_DATA-1:0]						output_data_v3,
 	output wire [SIZE_FILTER_DATA-1:0]						output_data_v4,
 	output wire [SIZE_FILTER_DATA-1:0]						output_data_v5
@@ -66,13 +66,13 @@ module filter (
 		.delay												(test_delay),
 		.output_data										(output_data_exp_sig_gen));
                             
-/*	v1_filter FilterV1 ( 
+	v1_filter FilterV1 ( 
 		.clk                                                  (clk),   
 		.reset                                                (reset),
 		.input_data                                           (output_data_exp_sig_gen),
 		.output_data                                          (output_data_v1));
 		
-	v2_filter FilterV2 (
+/*	v2_filter FilterV2 (
 		.clk                                                  (clk),
 		.reset                                                (reset),
 		.input_data                                           (output_data_exp_sig_gen),
