@@ -27,6 +27,5 @@ package package_settings;
 	parameter DELAY_DATA									= 14;
 	parameter SIZE_TEST_COUNTER								= 16;
 	parameter SIZE_TEST_RAM_ADDR							= 7;
-	parameter DEPTH											= 13;
 //-----------------------------------------------------------------------------
 endpackage
