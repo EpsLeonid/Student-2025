@@ -3,7 +3,7 @@ module v1_filter(
 	input wire clk,
 	input wire reset,
 	input wire [SIZE_IN_DATA-1:0] input_data,
-	output wire [SIZE_IN_DATA-1:0] output_data
+	output wire [SIZE_OUT_DATA-1:0] output_data
 );
 reg [SIZE_IN_DATA-1:0] data [DEPTH-1:0];
 reg [SIZE_CNT-1:0] cnt;
@@ -48,7 +48,7 @@ always_ff @(posedge clk)
 			Trap <= Trap + r;
 
 
-			output_data <= Trap[SIZE_IN_DATA+7:8];
+			output_data <= Trap[SIZE_IN_DATA+7:6];
 		end
 	end
 endmodule
