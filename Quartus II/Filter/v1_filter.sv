@@ -10,11 +10,11 @@ reg [SIZE_CNT-1:0] cnt;
 
 reg [SIZE_CNT-1:0] i;
 
-reg [SIZE_IN_DATA:0] d;
-
-reg [SIZE_IN_DATA+2:0] p;
-reg [SIZE_IN_DATA+4:0] r;
-reg [SIZE_IN_DATA+7:0] Trap;
+reg [SIZE_IN_DATA+2:0] d;
+reg [SIZE_IN_DATA+2:0] sh;//sh - SHIFT FOR ÑORRECT MULTIPLICATION
+reg [SIZE_IN_DATA+3:0] p;
+reg [SIZE_IN_DATA+7:0] r;
+reg [SIZE_IN_DATA+8:0] Trap;
 
 always_ff @(posedge clk) 
 	begin
@@ -28,7 +28,7 @@ always_ff @(posedge clk)
 			p <= 0;
 			r <= 0;
 			Trap <= 0;
-			
+
 			cnt <= 0;
 		end
 		else begin
@@ -39,16 +39,15 @@ always_ff @(posedge clk)
 			end
 			data[0] <= input_data;
 
-
 			d <= data[0] - data[k] - data[l] + data[k+l];
-			
+
+			sh <= d;
 
 			p <= p + d;
 			r <= p + M * sh;
 			Trap <= Trap + r;
 
-
-			output_data <= Trap[SIZE_IN_DATA+7:6];
+			output_data <= Trap[SIZE_IN_DATA+8:7];
 		end
 	end
 endmodule
