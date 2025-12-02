@@ -10,10 +10,12 @@ reg [SIZE_CNT-1:0] cnt;
 
 reg [SIZE_CNT-1:0] i;
 
-reg [SIZE_IN_DATA+2:0] d;
-reg [SIZE_IN_DATA+2:0] sh;//sh - SHIFT FOR ÑORRECT MULTIPLICATION
-reg [SIZE_IN_DATA+3:0] p;
-reg [SIZE_IN_DATA+7:0] r;
+//need resolution =  ...+8 to have same sign bit position
+
+reg [SIZE_IN_DATA+8:0] d;
+reg [SIZE_IN_DATA+8:0] sh;//sh - SHIFT FOR ÑORRECT MULTIPLICATION
+reg [SIZE_IN_DATA+8:0] p;
+reg [SIZE_IN_DATA+8:0] r;
 reg [SIZE_IN_DATA+8:0] Trap;
 
 always_ff @(posedge clk) 
